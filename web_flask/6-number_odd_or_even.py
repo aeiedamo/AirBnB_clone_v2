@@ -49,6 +49,10 @@ def numbersandtemplates(n):
 @app.route("//number_odd_or_even/<int:n>", strict_slashes=False)
 def numbersandevenness(n):
     """H1 tag: “Number: n is even|odd” inside the tag BODY"""
+    if n % 2 == 0:
+        evenness = "even"
+    else:
+        evenness = "odd"
     return render_template("6-number_odd_or_even.html", n=n, evenness=evenness)
 
 
