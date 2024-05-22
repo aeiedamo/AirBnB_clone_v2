@@ -10,16 +10,13 @@ from models import storage
 app = Flask(__name__)
 
 
-@app.route("/states_list", strict_slashes=False)
+@app.route("/cities_by_states", strict_slashes=False)
 def states_list():
     """
-        display a HTML page:
-        H1 tag: “States”
-    UL tag: with the list of all State objects present in DBStorage sorted
-    by name (A->Z)
+    list all states and citites in them
     """
-    states = sorted(list(storage.all("State").values()), key=lambda x: x.name)
-    return render_template("7-states_list.html", states=states)
+    states = storage.all("State").values()
+    return render_template("8-cities_by_states.html", states=states)
 
 
 @app.teardown_appcontext
