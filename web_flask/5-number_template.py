@@ -4,7 +4,7 @@ a script that starts a Flask web application.
 """
 
 from flask.app import Flask
-from flask.templating import render_template_string
+from flask import render_template
 
 app = Flask(__name__)
 
